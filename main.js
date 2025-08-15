@@ -29,9 +29,18 @@ function openWhatsApp() {
 // Download brochure
 function downloadBrochure() {
   alert(
-    "El brochure se está descargando...\n\n(En producción, aquí se descargaría el PDF del proyecto)"
+    "El folleto se está descargando..."
   );
+
+  const pdfPath = "brochure/folleto_raices_eco_condominio.pdf";
+  const link = document.createElement("a");
+  link.href = pdfPath;
+  link.download = "folleto_raices_eco_condominio.pdf";
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
 }
+
 
 // Scroll animations
 const observerOptions = {
