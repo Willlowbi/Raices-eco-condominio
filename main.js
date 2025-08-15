@@ -23,7 +23,7 @@ function openWhatsApp() {
   const message = encodeURIComponent(
     "Hola, me interesa obtener información sobre Raíces Eco Condominio. ¿Podrían enviarme más detalles sobre los terrenos disponibles?"
   );
-  window.open(`https://wa.me/525551234567?text=${message}`, "_blank");
+  window.open(`https://wa.me/+573027524071?text=${message}`, "_blank");
 }
 
 // Download brochure
