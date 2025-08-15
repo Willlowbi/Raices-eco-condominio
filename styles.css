@@ -374,22 +374,34 @@ body {
 }
 
 .gallery-item:nth-child(1) {
-  background: linear-gradient(135deg, var(--verde-raices), var(--verde-claro));
+  background-image: url('images/view-1.webp');
+  background-size: cover;
+  background-position: center;
 }
 .gallery-item:nth-child(2) {
-  background: linear-gradient(135deg, var(--verde-claro), #6b9c7f);
+  background-image: url('images/view-2.webp');
+  background-size: cover;
+  background-position: center;
 }
 .gallery-item:nth-child(3) {
-  background: linear-gradient(135deg, #4a7c59, #7cb342);
+  background-image: url('images/view-3.webp');
+  background-size: cover;
+  background-position: center;
 }
 .gallery-item:nth-child(4) {
-  background: linear-gradient(135deg, var(--verde-hover), var(--verde-raices));
+  background-image: url('images/view-4.webp');
+  background-size: cover;
+  background-position: center;
 }
 .gallery-item:nth-child(5) {
-  background: linear-gradient(135deg, #5c8a6f, #8bc34a);
+  background-image: url('images/view-5.webp');
+  background-size: cover;
+  background-position: center;
 }
 .gallery-item:nth-child(6) {
-  background: linear-gradient(135deg, var(--verde-raices), #689f38);
+  background-image: url('images/view-6.webp');
+  background-size: cover;
+  background-position: center;
 }
 
 .gallery-item::before {
@@ -735,6 +747,10 @@ footer {
   transform: translateY(-2px);
 }
 
+.download-brochure:hover svg {
+  fill: var(--beige-raices);
+}
+
 /* Responsive */
 @media (max-width: 1200px) {
   .features-grid {
@@ -799,8 +815,3 @@ footer {
   opacity: 1;
   transform: translateY(0);
 }
-
-
-
-
-
