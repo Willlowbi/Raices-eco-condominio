@@ -749,8 +749,7 @@ footer {
   }
 
   .logo-svg {
-    width: 120px;
-    height: 150px;
+    width: 100%;
   }
 
   .logo-text {
@@ -793,3 +792,4 @@ footer {
   opacity: 1;
   transform: translateY(0);
 }
+
