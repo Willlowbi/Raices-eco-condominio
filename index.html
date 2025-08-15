@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raíces Eco Condominio - Vive en conexión con la naturaleza</title>
+    <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="organic-pattern"></div>
+        <div class="organic-shape shape1"></div>
+        <div class="organic-shape shape2"></div>
+        
+        <div class="hero-content">
+            <div class="logo-container">
+                <div class="logo-img">
+                    <div class="logo-pattern"></div>
+                    <span class="logo-text">RAÍCES</span>
+                    <span class="logo-subtext">ECO CONDOMINIO</span>
+                </div>
+            </div>
+            <h1>Vive en conexión con la naturaleza</h1>
+            <p>Terrenos en condominio ecológico, rodeados de paz y sostenibilidad.</p>
+            <a href="#contact" class="cta-button"><span>Quiero más información</span></a>
+            <br>
+            <a href="#" class="download-brochure" onclick="downloadBrochure()">
+                📥 Descargar Brochure
+            </a>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <h2 class="section-title animate-on-scroll">¿Por qué elegir Raíces?</h2>
+            <div class="features-grid">
+                <div class="feature-card animate-on-scroll">
+                    <div class="feature-icon">🌿</div>
+                    <h3>Sostenibilidad</h3>
+                    <p>Desarrollo ecológico con energías renovables, sistemas de captación de agua y arquitectura bioclimática.</p>
+                </div>
+                <div class="feature-card animate-on-scroll">
+                    <div class="feature-icon">🤝</div>
+                    <h3>Comunidad</h3>
+                    <p>Vecinos que comparten valores de respeto por la naturaleza y vida consciente en armonía.</p>
+                </div>
+                <div class="feature-card animate-on-scroll">
+                    <div class="feature-icon">📊</div>
+                    <h3>Inversión Segura</h3>
+                    <p>Plusvalía garantizada en una zona de alto crecimiento con infraestructura de primer nivel.</p>
+                </div>
+                <div class="feature-card animate-on-scroll">
+                    <div class="feature-icon">🌲</div>
+                    <h3>Conexión Natural</h3>
+                    <p>65% del terreno conservado como área verde con senderos naturales y espacios de contemplación.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery -->
+    <section class="gallery">
+        <div class="container">
+            <h2 class="section-title animate-on-scroll">Descubre tu nuevo hogar</h2>
+            <div class="gallery-container">
+                <div class="gallery-item animate-on-scroll"></div>
+                <div class="gallery-item animate-on-scroll"></div>
+                <div class="gallery-item animate-on-scroll"></div>
+                <div class="gallery-item animate-on-scroll"></div>
+                <div class="gallery-item animate-on-scroll"></div>
+                <div class="gallery-item animate-on-scroll"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="map-section">
+        <div class="container">
+            <h2 class="section-title animate-on-scroll">Ubicación privilegiada</h2>
+            <div class="map-container animate-on-scroll">
+                <div class="map-placeholder">
+                    <div class="map-pin"></div>
+                    <h3 style="font-size: 1.8rem; font-weight: 300; margin-bottom: 15px;">Raíces Eco Condominio</h3>
+                    <p style="font-size: 1.1rem; opacity: 0.8;">A solo 15 minutos del centro de la ciudad</p>
+                    <p style="margin-top: 10px;">Acceso pavimentado • Servicios básicos • Seguridad 24/7</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="section-title" style="color: var(--beige-raices);">Lo que dicen nuestros residentes</h2>
+            <div class="testimonials-container">
+                <div class="testimonial-card animate-on-scroll">
+                    <div class="stars">★★★★★</div>
+                    <p>"Un lugar donde la arquitectura y la naturaleza se fusionan perfectamente. Cada día despierto con el canto de los pájaros y la tranquilidad que siempre busqué."</p>
+                    <p><strong>— María González</strong></p>
+                </div>
+                <div class="testimonial-card animate-on-scroll">
+                    <div class="stars">★★★★★</div>
+                    <p>"La inversión más inteligente que he hecho. No solo por la plusvalía, sino por la calidad de vida que mi familia disfruta aquí."</p>
+                    <p><strong>— Carlos Rodríguez</strong></p>
+                </div>
+                <div class="testimonial-card animate-on-scroll">
+                    <div class="stars">★★★★★</div>
+                    <p>"Mis hijos crecen conectados con la naturaleza, en un ambiente seguro y con valores de sustentabilidad. Es el futuro que quiero para ellos."</p>
+                    <p><strong>— Ana Martínez</strong></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2 class="section-title animate-on-scroll">Solicita información</h2>
+            <div class="form-container animate-on-scroll">
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Nombre completo</label>
+                        <input type="text" id="name" required placeholder="Tu nombre">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Correo electrónico</label>
+                        <input type="email" id="email" required placeholder="tu@email.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Teléfono</label>
+                        <input type="tel" id="phone" required placeholder="10 dígitos">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Mensaje (opcional)</label>
+                        <textarea id="message" rows="4" placeholder="¿Qué tipo de terreno te interesa?"></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Solicitar información</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div>
+                <h3>RAÍCES ECO CONDOMINIO</h3>
+                <p style="margin-top: 10px; opacity: 0.9;">Tu hogar en armonía con la naturaleza</p>
+            </div>
+            <div>
+                <h3>CONTACTO</h3>
+                <p style="margin-top: 10px;">📞 +57 555 123 4567</p>
+                <p>📧 info@raiceseco.com</p>
+                <p>📍 Carretera Principal km 15</p>
+            </div>
+            <div>
+                <h3>SÍGUENOS</h3>
+                <div class="social-links">
+                    <a href="#" class="social-link">f</a>
+                    <a href="#" class="social-link">ig</a>
+                    <a href="#" class="social-link">in</a>
+                </div>
+            </div>
+        </div>
+        <hr style="opacity: 0.2; margin: 40px auto; max-width: 1200px;">
+        <p style="opacity: 0.8;">&copy; 2025 Raíces Eco Condominio. Todos los derechos reservados.</p>
+        <p style="font-size: 0.9rem; opacity: 0.6; margin-top: 15px;">
+            <a href="#" style="color: var(--beige-raices); text-decoration: none; margin: 0 10px;">Términos y condiciones</a> | 
+            <a href="#" style="color: var(--beige-raices); text-decoration: none; margin: 0 10px;">Aviso de privacidad</a>
+        </p>
+    </footer>
+
+    <!-- WhatsApp Float Button -->
+    <div class="whatsapp-float" onclick="openWhatsApp()">
+        <span>💬</span>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
