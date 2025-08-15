@@ -749,12 +749,18 @@ footer {
   }
 
   .logo-svg {
-    width: 120px;
-    height: 150px;
+    width: 100%;
   }
 
   .logo-text {
-    font-size: 1.5rem;
+    font-size: 1rem;
+    letter-spacing: 8.5px;
+  }
+
+  .logo-subtext {
+    font-size: 0.8rem;
+    letter-spacing: -1px;
+    margin-right: 5px;
   }
 
   .form-container {
@@ -793,5 +799,6 @@ footer {
   opacity: 1;
   transform: translateY(0);
 }
+
 
 
