@@ -760,7 +760,7 @@ footer {
   .logo-subtext {
     font-size: 0.8rem;
     letter-spacing: -1px;
-    margin-right: 6px;
+    margin-right: 7px;
   }
 
   .form-container {
@@ -799,6 +799,7 @@ footer {
   opacity: 1;
   transform: translateY(0);
 }
+
 
 
 
