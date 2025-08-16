@@ -29,13 +29,13 @@ function openWhatsApp() {
 // Download brochure
 function downloadBrochure() {
   alert(
-    "El folleto se está descargando..."
+    "El brochure se está descargando..."
   );
 
-  const pdfPath = "assets/brochure/folleto_raices_eco_condominio.pdf";
+  const pdfPath = "assets/brochure/brochure_raices_eco_condominio.pdf";
   const link = document.createElement("a");
   link.href = pdfPath;
-  link.download = "folleto_raices_eco_condominio.pdf";
+  link.download = "brochure_raices_eco_condominio.pdf";
   document.body.appendChild(link);
   link.click();
   document.body.removeChild(link);
@@ -104,4 +104,45 @@ lottie.loadAnimation({
   loop: true,
   autoplay: true,
   path: 'assets/animations/Five-Stars.json'
+});
+
+// Animaciones de las features
+lottie.loadAnimation({
+  container: document.getElementById('lottie-plant'),
+  renderer: 'svg',
+  loop: true,
+  autoplay: true,
+  path: 'assets/animations/Plant.json'
+});
+
+lottie.loadAnimation({
+  container: document.getElementById('lottie-hands'),
+  renderer: 'svg',
+  loop: true,
+  autoplay: true,
+  path: 'assets/animations/Handshake.json'
+});
+
+lottie.loadAnimation({
+  container: document.getElementById('lottie-chart'),
+  renderer: 'svg',
+  loop: true,
+  autoplay: true,
+  path: 'assets/animations/Bar-Chart.json'
+});
+
+lottie.loadAnimation({
+  container: document.getElementById('lottie-tree'),
+  renderer: 'svg',
+  loop: true,
+  autoplay: true,
+  path: 'assets/animations/Tree.json'
+});
+
+lottie.loadAnimation({
+  container: document.getElementById('lottie-download'),
+  renderer: 'svg',
+  loop: true,
+  autoplay: true,
+  path: 'assets/animations/Download.json'
 });
