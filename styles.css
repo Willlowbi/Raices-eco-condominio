@@ -796,10 +796,17 @@ footer {
 }
 
 @media (max-width: 768px) {
-  .whatsapp-bubble {
-    opacity: 0;
+  /* Animación automática al cargar */
+  .whatsapp-bubble.auto-show {
     animation: bubbleAuto 4s ease-out forwards;
   }
+}
+
+/* Mostrar manualmente (sin animación, solo transición) */
+.whatsapp-bubble.manual-show {
+  opacity: 1 !important;
+  transform: translateY(0) scale(1) !important;
+  transition: opacity 0.4s ease, transform 0.4s ease;
 }
 
 @keyframes bubbleAuto {
@@ -808,13 +815,6 @@ footer {
   40% { transform: translateY(0) scale(1); }
   80% { opacity: 1; }
   100% { opacity: 0; transform: translateY(-10px) scale(0.9); }
-}
-
-.whatsapp-bubble.manual-show {
-  opacity: 1 !important;
-  transform: translateY(0) scale(1) !important;
-  transition: opacity 0.4s ease, transform 0.4s ease;
-  animation: none !important; /* cancela bubbleAuto */
 }
 
 
