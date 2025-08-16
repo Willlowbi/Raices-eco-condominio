@@ -41,7 +41,6 @@ function downloadBrochure() {
   document.body.removeChild(link);
 }
 
-
 // Scroll animations
 const observerOptions = {
   threshold: 0.1,
@@ -87,7 +86,7 @@ lottie.loadAnimation({
   renderer: 'svg',
   loop: true,
   autoplay: true,
-  path: 'assets/animations/Five-Stars.json' // ruta del archivo JSON
+  path: 'assets/animations/Five-Stars.json'
 });
 
 lottie.loadAnimation({
@@ -106,43 +105,42 @@ lottie.loadAnimation({
   path: 'assets/animations/Five-Stars.json'
 });
 
-// Animaciones de las features
-lottie.loadAnimation({
-  container: document.getElementById('lottie-plant'),
-  renderer: 'svg',
-  loop: true,
-  autoplay: true,
-  path: 'assets/animations/Plant.json'
-});
+// Utilidad para inicializar animaciones con scroll
+function initLottieOnScroll(id, path) {
+  const container = document.getElementById(id);
+  if (!container) return;
 
-lottie.loadAnimation({
-  container: document.getElementById('lottie-hands'),
-  renderer: 'svg',
-  loop: true,
-  autoplay: true,
-  path: 'assets/animations/Handshake.json'
-});
+  const anim = lottie.loadAnimation({
+    container,
+    renderer: 'svg',
+    loop: false,     // solo una vez
+    autoplay: false, // no iniciar aún
+    path
+  });
 
-lottie.loadAnimation({
-  container: document.getElementById('lottie-chart'),
-  renderer: 'svg',
-  loop: true,
-  autoplay: true,
-  path: 'assets/animations/Bar-Chart.json'
-});
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        anim.goToAndPlay(0, true); // reproduce desde el inicio
+        observer.unobserve(container); // solo una vez
+      }
+    });
+  }, { threshold: 0.6 }); // cuando 60% sea visible
 
-lottie.loadAnimation({
-  container: document.getElementById('lottie-tree'),
-  renderer: 'svg',
-  loop: true,
-  autoplay: true,
-  path: 'assets/animations/Tree.json'
-});
+  observer.observe(container);
+}
 
+// Inicializar cada feature
+initLottieOnScroll('lottie-plant', 'assets/animations/Plant.json');
+initLottieOnScroll('lottie-hands', 'assets/animations/Handshake.json');
+initLottieOnScroll('lottie-chart', 'assets/animations/Bar-Chart.json');
+initLottieOnScroll('lottie-tree', 'assets/animations/Tree.json');
+
+// Animación de descarga
 lottie.loadAnimation({
   container: document.getElementById('lottie-download'),
   renderer: 'svg',
   loop: true,
   autoplay: true,
-  path: 'assets/animations/Download.json'
+  path: 'assets/animations/Download.json' // la ruta de tu JSON
 });
