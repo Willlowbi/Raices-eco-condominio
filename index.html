@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Raíces Eco Condominio - Vive en conexión con la naturaleza</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.4/lottie.min.js"></script>
 </head>
 <body>
     <!-- Hero Section -->
@@ -32,8 +33,16 @@
             <br>
             <a href="#" class="download-brochure" onclick="downloadBrochure()" 
                 style="display: inline-flex; align-items: center; gap: 8px; text-decoration: none;">
-                    <svg xmlns="http://www.w3.org/2000/svg" height="28" viewBox="0 0 515.283 515.283" width="28" fill="currentColor">
-                        <path d="m400.775 515.283h-286.268c-30.584 0-59.339-11.911-80.968-33.54-21.628-21.626-33.539-50.382-33.539-80.968v-28.628c0-15.811 12.816-28.628 28.627-28.628s28.627 12.817 28.627 28.628v28.628c0 15.293 5.956 29.67 16.768 40.483 10.815 10.814 25.192 16.771 40.485 16.771h286.268c15.292 0 29.669-5.957 40.483-16.771 10.814-10.815 16.771-25.192 16.771-40.483v-28.628c0-15.811 12.816-28.628 28.626-28.628s28.628 12.817 28.628 28.628v28.628c0 30.584-11.911 59.338-33.54 80.968-21.629 21.629-50.384 33.54-80.968 33.54zm-143.134-114.509c-3.96 0-7.73-.804-11.16-2.257-3.2-1.352-6.207-3.316-8.838-5.885-.001-.001-.001-.002-.002-.002-.019-.018-.038-.037-.057-.056-.005-.004-.011-.011-.016-.016-.016-.014-.03-.029-.045-.044-.01-.01-.019-.018-.029-.029-.01-.01-.023-.023-.032-.031-.02-.02-.042-.042-.062-.062l-114.508-114.509c-11.179-11.179-11.179-29.305 0-40.485 11.179-11.179 29.306-11.18 40.485 0l65.638 65.638v-274.409c-.001-15.811 12.815-28.627 28.626-28.627s28.628 12.816 28.628 28.627v274.408l65.637-65.637c11.178-11.179 29.307-11.179 40.485 0 11.179 11.179 11.179 29.306 0 40.485l-114.508 114.507c-.02.02-.042.042-.062.062-.011.01-.023.023-.032.031-.01.011-.019.019-.029.029-.014.016-.03.03-.044.044-.005.005-.012.012-.017.016-.018.019-.037.038-.056.056-.001 0-.001.001-.002.002-.315.307-.634.605-.96.895-2.397 2.138-5.067 3.805-7.89 4.995-.01.004-.018.008-.028.012-.011.004-.02.01-.031.013-3.412 1.437-7.158 2.229-11.091 2.229z"/>
+                    <svg class="dl-anim" viewBox="0 0 128 128" width="28" height="28" aria-hidden="true">
+                        <!-- Flecha -->
+                        <g class="arrow" fill="none" stroke="currentColor" stroke-width="10" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="64" y1="18" x2="64" y2="78" />
+                        <polyline points="40,56 64,80 88,56" />
+                        </g>
+
+                        <!-- Bandeja -->
+                        <path class="tray" fill="none" stroke="currentColor" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"
+                            d="M24,88 v20 a12,12 0 0 0 12,12 h56 a12,12 0 0 0 12-12 V88 h-16 v20 H40 V88 z"/>
                     </svg>
                     Descargar Folleto
             </a>
@@ -286,7 +295,7 @@
             <h2 class="section-title animate-on-scroll">Ubicación privilegiada</h2>
             <div class="map-container animate-on-scroll">
                 <iframe 
-                    src="https://maps.google.com/maps?q=10.753615176597016,-74.7870694&z=15&output=embed"
+                    src="https://maps.google.com/maps?q=📍 Ubicado en la zona rural de Santo Tomás, Atlántico&z=15&output=embed"
                     width="100%" 
                     height="100%" 
                     style="border:0; border-radius: 20px;" 
@@ -296,8 +305,8 @@
                 </iframe>
                 <div class="map-info">
                     <h3>Raíces Eco Condominio</h3>
-                    <p>📍 Carretera Principal km 15, Cartagena</p>
-                    <p>A solo 15 minutos del centro de la ciudad</p>
+                    <p>📍 Ubicado en la zona rural de Santo Tomás, Atlántico</p>
+                    <p>A solo 25 minutos del centro de Barranquilla</p>
                 </div>
             </div>
         </div>
@@ -306,20 +315,22 @@
     <!-- Testimonials -->
     <section class="testimonials">
         <div class="container">
-            <h2 class="section-title" style="color: var(--beige-raices);">Lo que dicen nuestros residentes</h2>
+            <h2 class="section-title" style="color: var(--beige-raices);">
+                Lo que dicen nuestros residentes
+            </h2>
             <div class="testimonials-container">
                 <div class="testimonial-card animate-on-scroll">
-                    <div class="stars">★★★★★</div>
+                    <div class="stars" id="stars1"></div>
                     <p>"Un lugar donde la arquitectura y la naturaleza se fusionan perfectamente. Cada día despierto con el canto de los pájaros y la tranquilidad que siempre busqué."</p>
                     <p><strong>— María González</strong></p>
                 </div>
                 <div class="testimonial-card animate-on-scroll">
-                    <div class="stars">★★★★★</div>
+                    <div class="stars" id="stars2"></div>
                     <p>"La inversión más inteligente que he hecho. No solo por la plusvalía, sino por la calidad de vida que mi familia disfruta aquí."</p>
                     <p><strong>— Carlos Rodríguez</strong></p>
                 </div>
                 <div class="testimonial-card animate-on-scroll">
-                    <div class="stars">★★★★★</div>
+                    <div class="stars" id="stars3"></div>
                     <p>"Mis hijos crecen conectados con la naturaleza, en un ambiente seguro y con valores de sustentabilidad. Es el futuro que quiero para ellos."</p>
                     <p><strong>— Ana Martínez</strong></p>
                 </div>
@@ -380,7 +391,7 @@
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="22" height="22" fill="currentColor">
                             <path d="M12 2C8.14 2 5 5.14 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.86-3.14-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5 14.5 7.62 14.5 9 13.38 11.5 12 11.5z"/>
                         </svg>
-                        Carretera Principal km 15
+                        Vía Oriental, Km 19
                     </p>
                 </div>
                 <div style="text-align: center;">
