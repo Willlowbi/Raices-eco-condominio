@@ -197,8 +197,8 @@ body {
 }
 
 .cta-button:hover::before {
-  width: 300px;
-  height: 300px;
+  width: 400px;
+  height: 400px;
 }
 
 .cta-button span {
@@ -209,106 +209,6 @@ body {
 .cta-button:hover {
   transform: translateY(-3px);
   box-shadow: 0 20px 40px rgba(42, 74, 60, 0.4);
-}
-
-/* Optimización de animación mejorada - Versión rápida */
-.dl-anim {
-    display: block;
-    overflow: visible;
-    will-change: transform; /* Optimización para GPU */
-}
-
-.dl-anim .arrow,
-.dl-anim .tray {
-    transform-box: fill-box;
-    transform-origin: center;
-    will-change: transform; /* Optimización para GPU */
-}
-
-/* Animación mejorada de la flecha - movimiento más notorio y rápido */
-@keyframes arrow-float {
-    0% { 
-        transform: translateY(0) scale(1);
-        opacity: 1;
-    }
-    15% { 
-        transform: translateY(3px) scale(0.97);
-        opacity: 0.85;
-    }
-    30% { 
-        transform: translateY(1px) scale(0.99);
-        opacity: 0.92;
-    }
-    50% { 
-        transform: translateY(-1px) scale(1.01);
-        opacity: 0.92;
-    }
-    70% { 
-        transform: translateY(-3px) scale(1.03);
-        opacity: 0.85;
-    }
-    85% { 
-        transform: translateY(-1px) scale(1.01);
-        opacity: 0.92;
-    }
-    100% { 
-        transform: translateY(0) scale(1);
-        opacity: 1;
-    }
-}
-
-/* Animación mejorada de la bandeja - reacción más visible */
-@keyframes tray-react {
-    0%, 100% { 
-        transform: scaleY(1) translateY(0);
-    }
-    15% { 
-        transform: scaleY(0.97) translateY(1px);
-    }
-    30% { 
-        transform: scaleY(0.99) translateY(0.5px);
-    }
-    50% { 
-        transform: scaleY(1) translateY(0);
-    }
-    70% { 
-        transform: scaleY(1.03) translateY(-1px);
-    }
-    85% { 
-        transform: scaleY(1.01) translateY(-0.5px);
-    }
-}
-
-/* Aplicación de animaciones con timing más rápido y notorio */
-.dl-anim .arrow {
-    animation: arrow-float 2s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite;
-}
-
-.dl-anim .tray {
-    animation: tray-react 2s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite;
-    animation-delay: 0.08s; /* Delay ajustado para la velocidad */
-}
-
-/* Animación al hacer hover - pausa suave (opcional) */
-.download-brochure:hover .dl-anim .arrow,
-.download-brochure:hover .dl-anim .tray {
-    animation-play-state: paused;
-}
-
-/* Respeto por preferencias de movimiento reducido */
-@media (prefers-reduced-motion: reduce) {
-    .dl-anim .arrow, 
-    .dl-anim .tray {
-        animation: none;
-    }
-}
-
-/* Optimización para dispositivos de alto DPI */
-@media (-webkit-min-device-pixel-ratio: 2) {
-    .dl-anim {
-        backface-visibility: hidden;
-        perspective: 1000px;
-    }
 }
 
 /* Organic Shapes Decoration */
