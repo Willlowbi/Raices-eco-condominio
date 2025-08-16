@@ -810,6 +810,13 @@ footer {
   100% { opacity: 0; transform: translateY(-10px) scale(0.9); }
 }
 
+.whatsapp-bubble.manual-show {
+  opacity: 1 !important;
+  transform: translateY(0) scale(1) !important;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  animation: none !important; /* cancela bubbleAuto */
+}
+
 
 /* Download Button */
 .download-brochure {
@@ -948,4 +955,3 @@ footer {
   opacity: 1;
   transform: translateY(0);
 }
-
