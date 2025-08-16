@@ -29,15 +29,21 @@ function openWhatsApp() {
 const floatBtn = document.querySelector(".whatsapp-float");
   const bubble = document.querySelector(".whatsapp-bubble");
 
-  // Detectar si es móvil
   const isMobile = window.matchMedia("(max-width: 768px)").matches;
 
   if (isMobile) {
-    // Cuando el usuario toque el botón
+    // 🔹 Al cargar, dale la animación automática SOLO 1 vez
+    bubble.classList.add("auto-show");
+
+    // 🔹 Cuando el usuario toca el botón
     floatBtn.addEventListener("touchstart", () => {
+      // Cancelamos la auto animación si aún estaba activa
+      bubble.classList.remove("auto-show");
+
+      // Mostramos manualmente
       bubble.classList.add("manual-show");
 
-      // Ocultar después de 3s
+      // Ocultamos después de 3s
       setTimeout(() => {
         bubble.classList.remove("manual-show");
       }, 3000);
