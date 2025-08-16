@@ -32,7 +32,7 @@ function downloadBrochure() {
     "El folleto se está descargando..."
   );
 
-  const pdfPath = "brochure/folleto_raices_eco_condominio.pdf";
+  const pdfPath = "assets/brochure/folleto_raices_eco_condominio.pdf";
   const link = document.createElement("a");
   link.href = pdfPath;
   link.download = "folleto_raices_eco_condominio.pdf";
@@ -80,4 +80,28 @@ window.addEventListener("scroll", () => {
     window.requestAnimationFrame(updateParallax);
     ticking = true;
   }
+});
+
+lottie.loadAnimation({
+  container: document.getElementById('stars1'),
+  renderer: 'svg',
+  loop: true,
+  autoplay: true,
+  path: 'assets/animations/Five-Stars.json' // ruta del archivo JSON
+});
+
+lottie.loadAnimation({
+  container: document.getElementById('stars2'),
+  renderer: 'svg',
+  loop: true,
+  autoplay: true,
+  path: 'assets/animations/Five-Stars.json'
+});
+
+lottie.loadAnimation({
+  container: document.getElementById('stars3'),
+  renderer: 'svg',
+  loop: true,
+  autoplay: true,
+  path: 'assets/animations/Five-Stars.json'
 });
