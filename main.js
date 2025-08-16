@@ -26,6 +26,24 @@ function openWhatsApp() {
   window.open(`https://wa.me/+573027524071?text=${message}`, "_blank");
 }
 
+const floatBtn = document.querySelector(".whatsapp-float");
+  const bubble = document.querySelector(".whatsapp-bubble");
+
+  // Detectar si es móvil
+  const isMobile = window.matchMedia("(max-width: 768px)").matches;
+
+  if (isMobile) {
+    // Cuando el usuario toque el botón
+    floatBtn.addEventListener("touchstart", () => {
+      bubble.classList.add("manual-show");
+
+      // Ocultar después de 3s
+      setTimeout(() => {
+        bubble.classList.remove("manual-show");
+      }, 3000);
+    });
+  }
+
 // Download brochure
 function downloadBrochure() {
   alert(
