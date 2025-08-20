@@ -30,7 +30,7 @@ body {
 
 @font-face {
   font-family: "Alro";
-  src: url("/assets/fonts/alro-alro-regular-400.otf") format("opentype");
+  src: url("/assets/fonts/alro-alro-bold-700.otf") format("opentype");
   font-weight: normal;
   font-style: normal;
 }
@@ -111,23 +111,23 @@ body {
   justify-content: center;
   position: relative;
   overflow: hidden;
+  text-align: center; /* Añadir esto */
 }
 
 .logo-svg {
-  width: 100%;
+  width: 70%; /* Reducir el ancho del SVG */
 }
-
 .logo-text {
-  font-size: 2rem;
-  font-weight: 300;
+  font-size: 1.5rem;
   font-family: "Alro", sans-serif;
-  letter-spacing: 10px;
+  letter-spacing: 8px;
   color: var(--verde-raices);
 }
 
 .logo-subtext {
-  font-size: 0.9rem;
-  letter-spacing: 4px;
+  font-size: 0.85rem;
+  padding-right: 10px;
+  letter-spacing: -0.5px;
   color: var(--verde-raices);
 }
 
@@ -883,13 +883,12 @@ footer {
 
   .logo-text {
     font-size: 1rem;
-    letter-spacing: 8.5px;
+    letter-spacing: 8px;
   }
 
   .logo-subtext {
-    font-size: 0.8rem;
+    font-size: 0.7rem;
     letter-spacing: -1px;
-    margin-right: 9px;
   }
 
   .form-container {
