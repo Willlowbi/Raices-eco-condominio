@@ -5,14 +5,15 @@
 }
 
 :root {
-  --verde-raices: #2a4a3c;
-  --beige-raices: #f5efe6;
-  --beige-raice-alternativo: #f5ecd0;
-  --verde-claro: #4a7c59;
-  --marron-tierra: #8b6f47;
+  --verde-raices: #243d30;
+  --beige-raices: #f6ecd1;
+  --beige-base: #f9f5f0;
+  --beige-fondo-hero: #b3a17a;
+  --verde-claro: #22743b;
+  --marron-tierra: #6f5438;
   --blanco: #ffffff;
-  --gris-claro: #fafaf8;
-  --verde-hover: #1e3a2f;
+  --gris-claro: #faf8f2;
+  --verde-hover: #1a2f23;
 }
 
 html {
@@ -24,28 +25,14 @@ body {
   line-height: 1.6;
   color: var(--verde-raices);
   overflow-x: hidden;
-  background: var(--beige-raices);
+  background: var(--beige-fondo-hero);
 }
 
-/* Organic Pattern Background */
-.organic-pattern {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  opacity: 0.03;
-  background-image: repeating-linear-gradient(
-      45deg,
-      transparent,
-      transparent 35px,
-      var(--verde-raices) 35px,
-      var(--verde-raices) 70px
-    ),
-    radial-gradient(
-      ellipse at top left,
-      transparent 40%,
-      var(--verde-raices) 100%
-    );
-  pointer-events: none;
+@font-face {
+  font-family: "Alro";
+  src: url("fonts/alro-alro-regular-400.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
 }
 
 /* Hero Section */
@@ -53,9 +40,9 @@ body {
   min-height: 100vh;
   background: linear-gradient(
     135deg,
-    var(--beige-raices) 0%,
+    var(--beige-fondo-hero) 0%,
     rgba(245, 239, 230, 0.95) 50%,
-    var(--beige-raices) 100%
+    var(--beige-fondo-hero) 100%
   );
   display: flex;
   align-items: center;
@@ -133,6 +120,7 @@ body {
 .logo-text {
   font-size: 2rem;
   font-weight: 300;
+  font-family: "Alro", sans-serif;
   letter-spacing: 10px;
   color: var(--verde-raices);
 }
@@ -140,7 +128,7 @@ body {
 .logo-subtext {
   font-size: 0.9rem;
   letter-spacing: 4px;
-  color: var(--verde-claro);
+  color: var(--verde-raices);
 }
 
 .hero h1 {
@@ -154,7 +142,6 @@ body {
 .hero p {
   font-size: clamp(1rem, 2vw, 1.3rem);
   margin-bottom: 40px;
-  opacity: 0.85;
   color: var(--verde-claro);
 }
 
@@ -171,7 +158,7 @@ body {
   display: inline-block;
   padding: 18px 50px;
   background: var(--verde-raices);
-  color: var(--beige-raices);
+  color: var(--beige-base);
   text-decoration: none;
   border-radius: 50px;
   font-size: 1.1rem;
@@ -299,7 +286,7 @@ body {
 }
 
 .feature-card {
-  background: var(--beige-raices);
+  background: var(--beige-base);
   padding: 50px 35px;
   border-radius: 30px;
   text-align: center;
@@ -338,7 +325,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--beige-raices);
+  color: var(--beige-base);
   font-size: 2.5rem;
   transition: all 0.4s;
 }
@@ -363,7 +350,7 @@ body {
 /* Gallery */
 .gallery {
   padding: 120px 20px;
-  background: linear-gradient(135deg, var(--beige-raices), var(--gris-claro));
+  background: linear-gradient(135deg, var(--beige-base), var(--gris-claro));
   position: relative;
 }
 
@@ -464,7 +451,7 @@ body {
   position: absolute;
   bottom: 16%;
   left: 8%;
-  background: var(--beige-raices);
+  background: var(--beige-base);
   padding: 25px 35px;
   border-radius: 20px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
@@ -552,7 +539,7 @@ body {
 /* Contact Form */
 .contact {
   padding: 120px 20px;
-  background: linear-gradient(135deg, var(--beige-raices), var(--gris-claro));
+  background: linear-gradient(135deg, var(--beige-base), var(--gris-claro));
   position: relative;
 }
 
@@ -627,7 +614,7 @@ body {
   width: 100%;
   padding: 20px;
   background: var(--verde-raices);
-  color: var(--beige-raices);
+  color: var(--beige-base);
   border: none;
   border-radius: 50px;
   font-size: 1.1rem;
@@ -648,7 +635,7 @@ body {
 /* Footer */
 footer {
   background: var(--verde-raices);
-  color: var(--beige-raices);
+  color: var(--beige-base);
   padding: 60px 20px 30px;
   text-align: center;
   position: relative;
@@ -692,7 +679,7 @@ footer {
 
 .social-link:hover {
   transform: translateY(-5px) scale(1.1);
-  color: var(--beige-raices);
+  color: var(--beige-base);
 }
 
 .social-link svg {
@@ -826,7 +813,7 @@ footer {
   gap: 10px;
   margin-top: 20px;
   padding: 15px 35px;
-  background: var(--beige-raices); /* Fondo claro para que el glow contraste */
+  background: var(--beige-base);
   color: var(--verde-raices);
   border: 2px solid var(--verde-raices);
   border-radius: 50px;
@@ -840,7 +827,7 @@ footer {
 
 .download-brochure:hover {
   background: var(--verde-raices);
-  color: var(--beige-raices);
+  color: var(--beige-base);
   transform: translateY(-2px);
 
   /* Glow más fuerte en hover */
@@ -849,7 +836,7 @@ footer {
 }
 
 .download-brochure:hover svg {
-  fill: var(--beige-raices);
+  fill: var(--beige-base);
 }
 
 /* Contenedor del Lottie en el botón */
@@ -874,7 +861,7 @@ footer {
 }
 
 .download-brochure:hover {
-  color: var(--beige-raices);
+  color: var(--beige-base);
 }
 
 /* Responsive */
