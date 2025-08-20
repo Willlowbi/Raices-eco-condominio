@@ -30,7 +30,7 @@ body {
 
 @font-face {
   font-family: "Alro";
-  src: url("fonts/alro-alro-regular-400.otf") format("opentype");
+  src: url("/assets/fonts/alro-alro-regular-400.otf") format("opentype");
   font-weight: normal;
   font-style: normal;
 }
