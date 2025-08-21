@@ -207,25 +207,29 @@
 
     <!-- Map Section -->
     <section class="map-section">
-            <h2 class="section-title animate-on-scroll">Ubicación privilegiada</h2>
-            <div class="map-container animate-on-scroll">
-                <iframe 
-                    src="https://maps.google.com/maps?q=10.753620412798194, -74.78709088970876&z=15&output=embed"
-                    width="100%" 
-                    height="100%" 
-                    style="border:0; border-radius: 20px;" 
-                    allowfullscreen="" 
-                    loading="lazy"
-                    referrerpolicy="no-referrer-when-downgrade">
-                </iframe>
-            </div>
-
-            <!-- Info debajo del mapa -->
-            <div class="map-info">
+        <h2 class="section-title animate-on-scroll">Ubicación privilegiada</h2>
+        <div class="map-container animate-on-scroll">
+            <iframe 
+                src="https://maps.google.com/maps?q=10.753620412798194, -74.78709088970876&z=15&output=embed"
+                width="100%" 
+                height="100%" 
+                style="border:0; border-radius: 20px;" 
+                allowfullscreen="" 
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+            <!-- map-info para escritorio -->
+            <div class="map-info map-info--desktop" role="region" aria-label="Información del mapa">
                 <h3>Raíces Eco Condominio</h3>
                 <p>📍 Ubicado en la zona rural de Santo Tomás, Atlántico</p>
                 <p>A solo 25 minutos del centro de Barranquilla</p>
             </div>
+        </div>
+        <!-- map-info para mobile -->
+        <div class="map-info map-info--mobile" role="region" aria-label="Información del mapa">
+            <h3>Raíces Eco Condominio</h3>
+            <p>📍 Ubicado en la zona rural de Santo Tomás, Atlántico</p>
+            <p>A solo 25 minutos del centro de Barranquilla</p>
         </div>
     </section>
 
