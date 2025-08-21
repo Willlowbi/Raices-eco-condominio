@@ -278,8 +278,8 @@ body {
 
 .features-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr); /* 4 columnas iguales en una fila */
-  gap: 14px;                              /* separación entre cards (ajusta si quieres menos) */
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
   align-items: stretch;
   width: 100%;
   box-sizing: border-box;
@@ -448,15 +448,55 @@ body {
 }
 
 .map-info {
-  position: absolute;
-  bottom: 16%;
-  left: 8%;
   background: var(--beige-base);
   padding: 25px 35px;
   border-radius: 20px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
   z-index: 10;
   max-width: 500px;
+}
+
+/* ---- Mobile (por defecto) ---- */
+/* Mobile: mostrar la versión fuera del mapa */
+.map-info--mobile {
+  display: block;
+  opacity: 1;
+  visibility: visible;
+  transition: opacity .28s ease, transform .28s ease;
+}
+
+/* Desktop version is present but hidden (absolute so it doesn't affect layout) */
+.map-info--desktop {
+  position: absolute;      /* no ocupa espacio en mobile */
+  left: 24px;
+  bottom: 24px;
+  z-index: 10;
+
+  /* hidden by default so no flash on load; absolute prevents layout shift */
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(8px);   /* small offset for slide effect */
+  transition: opacity .32s ease, transform .32s ease;
+  pointer-events: none;         /* avoid accidental focus/click while hidden */
+}
+
+/* ---- Desktop breakpoint: intercambiamos visibilidad con transición ---- */
+@media (min-width: 768px) {
+  /* Hide the mobile block visually/accessibility-wise */
+  .map-info--mobile {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(6px);
+    pointer-events: none;
+  }
+
+  /* Show the desktop block with fade+slide */
+  .map-info--desktop {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
 }
 
 .map-info h3 {
