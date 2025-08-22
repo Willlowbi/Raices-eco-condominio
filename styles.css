@@ -506,6 +506,7 @@ body {
   background: var(--beige-base);
   padding: 25px 35px;
   border-radius: 20px;
+  border-left: 6px solid var(--verde-raices);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
   z-index: 10;
   max-width: 500px;
@@ -994,3 +995,4 @@ footer {
   opacity: 1;
   transform: translateY(0);
 }
+
