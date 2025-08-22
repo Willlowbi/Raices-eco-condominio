@@ -113,19 +113,23 @@ if (isMobile) {
   checkViewport(mq);
 })();
 
-// Download brochure
+// Download brochure adaptado a móvil / escritorio
 function downloadBrochure() {
-  alert(
-    "El brochure se está descargando..."
-  );
-
   const pdfPath = "assets/brochure/brochure_raices_eco_condominio.pdf";
-  const link = document.createElement("a");
-  link.href = pdfPath;
-  link.download = "brochure_raices_eco_condominio.pdf";
-  document.body.appendChild(link);
-  link.click();
-  document.body.removeChild(link);
+  const isMobile = window.matchMedia("(max-width: 768px)").matches;
+
+  if (isMobile) {
+    // 📱 Móvil: descargar
+    const link = document.createElement("a");
+    link.href = pdfPath;
+    link.download = "brochure_raices_eco_condominio.pdf";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  } else {
+    // 💻 PC: abrir directo (como en vectorization.eu)
+    window.open(pdfPath, "_blank");
+  }
 }
 
 // Scroll animations
