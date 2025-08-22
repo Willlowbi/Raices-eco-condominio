@@ -791,17 +791,18 @@ footer {
 }
 
 /* Botón de WhatsApp */
+/* Botón de WhatsApp */
 .whatsapp-float {
   position: relative;
   width: 65px;
   height: 65px;
-  background: linear-gradient(135deg, #25d366, #128c7e);
+  background: var(--beige-raices);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   color: var(--blanco);
-  box-shadow: 0 10px 30px rgba(37, 211, 102, 0.4);
+  box-shadow: 0 0 15px 3px rgba(36, 61, 48, 0.3); /* Glow suave */
   cursor: pointer;
   z-index: 1000;
   animation: whatsappPulse 2s ease-in-out infinite;
@@ -810,24 +811,17 @@ footer {
 @keyframes whatsappPulse {
   0%, 100% {
     transform: scale(1);
-    box-shadow: 0 10px 30px rgba(37, 211, 102, 0.4);
+    box-shadow: 0 0 15px 3px rgba(36, 61, 48, 0.3);
   }
   50% {
     transform: scale(1.08);
-    box-shadow: 0 15px 40px rgba(37, 211, 102, 0.6);
+    box-shadow: 0 0 22px 6px rgba(36, 61, 48, 0.45);
   }
 }
 
 .whatsapp-float:hover {
   transform: scale(1.15);
-  box-shadow: 0 15px 40px rgba(37, 211, 102, 0.6);
-}
-
-@media (max-width: 768px) {
-  /* Animación automática al cargar */
-  .whatsapp-bubble.auto-show {
-    animation: bubbleAuto 4s ease-out forwards;
-  }
+  box-shadow: 0 0 25px 8px rgba(36, 61, 48, 0.5);
 }
 
 /* Mostrar manualmente (sin animación, solo transición) */
@@ -981,4 +975,25 @@ footer {
 .animate-on-scroll.visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+.logo-title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0; 
+}
+
+.logo-text-alt {
+  font-size: 1.5rem;
+  font-family: "Alro", sans-serif;
+  letter-spacing: 8px;
+  color: var(--beige-raices);
+}
+
+.logo-subtext-alt {
+  font-size: 0.85rem;
+  padding-right: 10px;
+  letter-spacing: -0.5px;
+  color: var(--beige-raices);
 }
