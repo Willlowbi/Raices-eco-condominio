@@ -869,6 +869,10 @@ footer {
   }
 }
 
+.whatsapp-bubble.auto-show {
+  animation: bubbleAuto 3s ease forwards;
+}
+
 /* Botón de WhatsApp */
 .whatsapp-float {
   position: relative;
@@ -995,4 +999,3 @@ footer {
   opacity: 1;
   transform: translateY(0);
 }
-
