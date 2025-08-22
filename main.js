@@ -27,28 +27,91 @@ function openWhatsApp() {
 }
 
 const floatBtn = document.querySelector(".whatsapp-float");
-  const bubble = document.querySelector(".whatsapp-bubble");
+const bubble = document.querySelector(".whatsapp-bubble");
 
-  const isMobile = window.matchMedia("(max-width: 768px)").matches;
+const isMobile = window.matchMedia("(max-width: 768px)").matches;
 
-  if (isMobile) {
-    // 🔹 Al cargar, dale la animación automática SOLO 1 vez
-    bubble.classList.add("auto-show");
+if (isMobile) {
+  // 🔹 Al cargar, dale la animación automática SOLO 1 vez
+  bubble.classList.add("auto-show");
 
-    // 🔹 Cuando el usuario toca el botón
-    floatBtn.addEventListener("touchstart", () => {
-      // Cancelamos la auto animación si aún estaba activa
-      bubble.classList.remove("auto-show");
+  // 🔹 Cuando el usuario toca el botón
+  floatBtn.addEventListener("touchstart", () => {
+    // Cancelamos la auto animación si aún estaba activa
+    bubble.classList.remove("auto-show");
 
-      // Mostramos manualmente
-      bubble.classList.add("manual-show");
+    // Mostramos manualmente
+    bubble.classList.add("manual-show");
 
-      // Ocultamos después de 3s
-      setTimeout(() => {
-        bubble.classList.remove("manual-show");
-      }, 3000);
-    });
+    // Ocultamos después de 3s
+    setTimeout(() => {
+      bubble.classList.remove("manual-show");
+    }, 3000);
+  });
+}
+
+
+// --- Empuje del botón cuando aparece "Términos y condiciones" ---
+(function () {
+  const whatsappContainer = document.querySelector(".whatsapp-float-container");
+  const legalNotice = document.querySelector("footer > p:last-of-type"); // 👈 clave
+
+  if (!whatsappContainer || !legalNotice) return;
+
+  let hasMoved = false;
+  let lastY = window.scrollY;
+  let legalObserver;
+
+  function enableMobileLogic() {
+    if (legalObserver) return; // evitar duplicados
+
+    legalObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting && !hasMoved) {
+          whatsappContainer.classList.add("bump-up");
+          hasMoved = true;
+        }
+      });
+    }, { threshold: 0.05 });
+
+    legalObserver.observe(legalNotice);
+
+    window.addEventListener("scroll", onScrollMobile);
   }
+
+  function disableMobileLogic() {
+    if (!legalObserver) return;
+    legalObserver.disconnect();
+    legalObserver = null;
+    whatsappContainer.classList.remove("bump-up");
+    hasMoved = false;
+    window.removeEventListener("scroll", onScrollMobile);
+  }
+
+  function onScrollMobile() {
+    const y = window.scrollY;
+    const goingUp = y < lastY;
+    if (goingUp && hasMoved) {
+      whatsappContainer.classList.remove("bump-up");
+      hasMoved = false;
+    }
+    lastY = y;
+  }
+
+  // Revisa si es mobile en tiempo real
+  const mq = window.matchMedia("(max-width: 768px)");
+  function checkViewport(e) {
+    if (e.matches) {
+      enableMobileLogic();
+    } else {
+      disableMobileLogic();
+    }
+  }
+
+  // Ejecuta al cargar y cuando cambie el tamaño
+  mq.addEventListener("change", checkViewport);
+  checkViewport(mq);
+})();
 
 // Download brochure
 function downloadBrochure() {
