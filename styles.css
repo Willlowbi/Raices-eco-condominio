@@ -103,7 +103,7 @@ body {
   height: 100%;
   background: var(--beige-raices);
   border-radius: 30px;
-  padding: 30px;
+  padding: 20px;
   box-shadow: 0 20px 60px rgba(42, 74, 60, 0.15);
   display: flex;
   flex-direction: column;
@@ -114,20 +114,17 @@ body {
   text-align: center; /* Añadir esto */
 }
 
-.logo-svg {
-  width: 70%; /* Reducir el ancho del SVG */
-}
 .logo-text {
-  font-size: 1.5rem;
+  font-size: 2rem;
   font-family: "Alro", sans-serif;
-  letter-spacing: 8px;
+  letter-spacing: 5px;
   color: var(--verde-raices);
 }
 
 .logo-subtext {
-  font-size: 0.85rem;
-  padding-right: 9px;
-  letter-spacing: -0.5px;
+  font-size: 1rem;
+  padding-right: 8px;
+  letter-spacing: -2px;
   color: var(--verde-raices);
 }
 
@@ -284,7 +281,7 @@ body {
 .lottie-icon svg line {
   stroke: currentColor !important;
   fill: currentColor !important;
-  stroke-width: 10px !important; /* antes era 5px */
+  stroke-width: 10px !important;
 }
 
 /* Así se pintará con el color del texto del botón */
@@ -810,15 +807,18 @@ footer {
   position: fixed;
   bottom: 30px;
   right: 30px;
-  display: inline-block; /* no uses flex column */
+  display: inline-block;
   z-index: 1000;
+  transition: bottom 0.3s ease;
 }
+
+.whatsapp-float-container.bump-up { bottom: 60px; }
 
 /* Chat bubble horizontal arriba del botón */
 .whatsapp-bubble {
   position: absolute;
-  bottom: 80px;  /* encima del botón */
-  right: 0;      /* alineado con el botón */
+  bottom: 80px;
+  right: 0;
   background: #ffffff;
   color: var(--verde-raices);
   padding: 10px 16px;
@@ -826,7 +826,7 @@ footer {
   box-shadow: 0 5px 20px rgba(0,0,0,0.15);
   font-size: 0.95rem;
   font-weight: 500;
-  white-space: nowrap; /* 👈 esto lo mantiene en horizontal */
+  white-space: nowrap;
   opacity: 0;
   transform: translateY(10px) scale(0.8);
   transition: opacity 0.4s ease, transform 0.4s ease;
@@ -837,8 +837,8 @@ footer {
 .whatsapp-bubble::after {
   content: "";
   position: absolute;
-  bottom: -8px;   /* colita abajo */
-  right: 20px;    /* apunte al botón */
+  bottom: -8px;
+  right: 20px;
   border-width: 8px 8px 0 8px;
   border-style: solid;
   border-color: #ffffff transparent transparent transparent;
@@ -879,7 +879,7 @@ footer {
   align-items: center;
   justify-content: center;
   color: var(--blanco);
-  box-shadow: 0 0 15px 3px rgba(36, 61, 48, 0.3); /* Glow suave */
+  box-shadow: 0 0 15px 3px rgba(36, 61, 48, 0.3);
   cursor: pointer;
   z-index: 1000;
   animation: whatsappPulse 2s ease-in-out infinite;
