@@ -424,37 +424,56 @@ body {
   position: relative;
   cursor: pointer;
   transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  /* Optimización de renderizado */
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transform: translateZ(0) scale(1.001);
+  will-change: transform;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .gallery-item:nth-child(1) {
-  background-image: url('assets/images/view-1.webp');
+  background-image: url('assets/images/view-1.jpg');
   background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
+  image-rendering: auto;
 }
 .gallery-item:nth-child(2) {
-  background-image: url('assets/images/view-2.webp');
+  background-image: url('assets/images/view-2.jpg');
   background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
+  image-rendering: auto;
 }
 .gallery-item:nth-child(3) {
-  background-image: url('assets/images/view-3.webp');
+  background-image: url('assets/images/view-3.jpg');
   background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
+  image-rendering: auto;
 }
 .gallery-item:nth-child(4) {
-  background-image: url('assets/images/view-4.webp');
+  background-image: url('assets/images/view-4.jpg');
   background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
+  image-rendering: auto;
 }
 .gallery-item:nth-child(5) {
-  background-image: url('assets/images/view-5.webp');
+  background-image: url('assets/images/view-5.jpg');
   background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
+  image-rendering: auto;
 }
 .gallery-item:nth-child(6) {
-  background-image: url('assets/images/view-6.webp');
+  background-image: url('assets/images/view-6.jpg');
   background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
+  image-rendering: auto;
 }
 
 .gallery-item::before {
@@ -466,6 +485,7 @@ body {
   height: 100%;
   background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400"><path d="M50,200 Q150,100 250,200 T450,200" stroke="white" stroke-width="2" fill="none" opacity="0.1"/></svg>');
   background-size: cover;
+  pointer-events: none;
 }
 
 .gallery-item::after {
@@ -478,6 +498,7 @@ body {
   font-weight: 300;
   letter-spacing: 1px;
   text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  pointer-events: none;
 }
 
 .gallery-item:hover {
@@ -999,5 +1020,6 @@ footer {
   opacity: 1;
   transform: translateY(0);
 }
+
 
 
